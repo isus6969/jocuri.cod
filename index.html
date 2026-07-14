@@ -1,0 +1,1066 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900">
+  <rect width="800" height="900" rx="40" fill="#1c0713"/>
+  <rect x="40" y="40" width="720" height="820" rx="30" fill="#2b0f1d" stroke="#ff4d88" stroke-width="4"/>
+  <circle cx="400" cy="320" r="180" fill="#ffdbeb" opacity="0.16"/>
+  <path d="M305 360c0-80 55-125 95-125s95 45 95 125v120H305z" fill="#7a3bff"/>
+  <circle cx="290" cy="305" r="70" fill="#f6b9cf"/>
+  <circle cx="510" cy="305" r="70" fill="#f6b9cf"/>
+  <circle cx="280" cy="290" r="12" fill="#1f1221"/>
+  <circle cx="500" cy="290" r="12" fill="#1f1221"/>
+  <path d="M270 390c35 40 80 60 130 60s95-20 130-60" stroke="#ff4d88" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M350 490c0 60 30 95 50 95s50-35 50-95" fill="#ff4d88"/>
+  <path d="M245 545c35-40 70-60 110-60 40 0 75 20 110 60" stroke="#ff7aad" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M310 610c45 60 135 60 180 0" stroke="#ff7aad" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M250 200c30-95 220-110 300 0" stroke="#ff4d88" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M330 180c0-35 25-60 60-60 35 0 60 25 60 60" fill="#ff4d88"/>
+  <path d="M560 690c-35 80-120 120-160 120s-125-40-160-120" fill="#ff4d88" opacity="0.25"/>
+  <text x="400" y="790" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#ffdce9">Tine de tine și de el</text>
+</svg>
+
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La multi ani, iubitul meu.</title>
+    <style>
+      :root {
+        --bg: #12080f;
+        --text: rgba(220,220,220,0.9);
+        --muted: #bfbfbf;
+        --accent: #ff4d88;
+        --accent-2: #9c3cff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--text);
+        background: transparent;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .page-video,
+      .page-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+      }
+
+      .page-video {
+        z-index: 0;
+        object-fit: cover;
+      }
+
+      .page-bg {
+        z-index: 0;
+        background-image: url('backround.gif');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #12080f;
+        filter: brightness(1.1) contrast(1.05) saturate(1.1);
+        box-shadow: inset 0 0 80px rgba(0,0,0,0.2);
+        outline: 2px solid rgba(255,255,255,0.02);
+      }
+
+      .background-disc {
+        position: fixed;
+        left: -360px;
+        top: 8%;
+        width: 760px;
+        height: 760px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #080708 0%, #131212 18%, #141213 40%, #0f0d0e 68%, #050304 100%);
+        box-shadow: inset 0 0 120px rgba(255, 220, 130, 0.12), inset 0 0 12px rgba(255,255,255,0.07), 0 0 140px rgba(0,0,0,0.45);
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+        transform: rotate(-6deg);
+        animation: backgroundSpin 24s linear infinite;
+      }
+
+      .background-grooves {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background-image:
+          radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px),
+          radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px),
+          radial-gradient(circle, rgba(255,255,255,0.03) 4px, transparent 4px),
+          radial-gradient(circle, rgba(255,255,255,0.02) 7px, transparent 7px),
+          radial-gradient(circle, rgba(255,255,255,0.01) 10px, transparent 10px);
+        background-size: 12px 12px, 24px 24px, 48px 48px, 96px 96px, 190px 190px;
+        opacity: 0.22;
+        transform: scale(1.01);
+        mix-blend-mode: screen;
+      }
+
+      .background-disc::before {
+        content: '';
+        position: absolute;
+        inset: 140px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,0,0,0.55) 20%, transparent 55%);
+        box-shadow: inset 0 0 40px rgba(0,0,0,0.45);
+      }
+
+      .background-disc::after {
+        content: '';
+        position: absolute;
+        left: 52%;
+        top: 52%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #050505;
+        box-shadow: inset 0 0 18px rgba(255,255,255,0.08);
+        transform: translate(-50%, -50%);
+      }
+
+      .background-disc .record-cover {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        border: 16px solid #f0ece7;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 22px 70px rgba(0,0,0,0.55);
+      }
+
+      .background-disc .record-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.55) contrast(1.05) brightness(0.95);
+      }
+
+      .music-notes {
+        position: absolute;
+        left: 44%;
+        top: 34%;
+        width: 220px;
+        height: 240px;
+        pointer-events: none;
+      }
+
+      .music-notes span {
+        position: absolute;
+        font-size: 1.2rem;
+        color: #ffdce8;
+        opacity: 0;
+        filter: drop-shadow(0 0 13px rgba(255, 195, 245, 0.95));
+        animation: noteRise 2.2s ease-out infinite;
+      }
+
+      .music-notes span:nth-child(1) { left: 32%; top: 44%; animation-delay: 0.1s; }
+      .music-notes span:nth-child(2) { left: 62%; top: 34%; animation-delay: 0.35s; }
+      .music-notes span:nth-child(3) { left: 42%; top: 28%; animation-delay: 0.6s; }
+      .music-notes span:nth-child(4) { left: 72%; top: 18%; animation-delay: 0.9s; }
+
+      .star-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      .star-overlay .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.7;
+        filter: drop-shadow(0 0 10px rgba(255,255,255,0.9));
+        animation: starTwinkle 3.8s ease-in-out infinite alternate;
+      }
+
+      .star-overlay .star:nth-child(odd) {
+        width: 3px;
+        height: 3px;
+      }
+
+      .click-burst {
+        position: absolute;
+        pointer-events: none;
+        z-index: 50;
+        white-space: nowrap;
+        font-family: 'Segoe Script', cursive;
+        font-size: 1.15rem;
+        color: #ffd6eb;
+        text-shadow: 0 0 14px rgba(255,255,255,0.85), 0 0 22px rgba(255,125,185,0.55);
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        animation: burstPop 0.95s ease-out forwards;
+      }
+
+      @keyframes starTwinkle {
+        from { opacity: 0.25; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1.2); }
+      }
+
+      @keyframes burstPop {
+        0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
+        60% { opacity: 1; transform: translate(-50%, -52%) scale(1.05); }
+        100% { opacity: 0; transform: translate(-50%, -90%) scale(1.25); }
+      }
+
+      .main-card {
+        position: relative;
+        z-index: 5;
+        max-width: 1150px;
+        margin: 2.2rem auto;
+        padding: 1.6rem;
+        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(44, 12, 24, 0.18), rgba(18, 6, 14, 0.18));
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(191,191,191,0.06);
+        backdrop-filter: blur(6px);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+      }
+
+      .open-btn {
+        border: none;
+        padding: 1rem 1.4rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(255, 77, 136, 0.28);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+        min-width: 220px;
+      }
+
+      .open-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 14px 28px rgba(255, 77, 136, 0.35);
+      }
+
+      .open-btn.secondary {
+        background: linear-gradient(135deg, #a05bff, #ff4d99);
+        box-shadow: 0 12px 30px rgba(160, 91, 255, 0.28);
+      }
+
+      .album-button-row {
+        display: none;
+        justify-content: center;
+        margin-top: 1.25rem;
+      }
+
+      .album-button-row.visible {
+        display: flex;
+      }
+
+      .open-btn:focus,
+      .open-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 16px 34px rgba(255, 77, 136, 0.35);
+      }
+
+      .album-wrap {
+        position: relative;
+        margin-top: 1.6rem;
+        overflow: visible;
+        min-height: 420px;
+        padding-left: 0;
+      }
+
+      .photo-album {
+        display: none;
+        position: relative;
+        margin: 0 auto;
+        max-width: 920px;
+        min-height: 420px;
+        padding: 1rem 0 0.5rem;
+      }
+
+      .photo-album.visible {
+        display: block;
+      }
+
+      .photo-row {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        min-height: 360px;
+        margin-bottom: 1.8rem;
+        padding: 1.5rem 1rem 0 1rem;
+      }
+
+      .photo-row::before {
+        content: '';
+        position: absolute;
+        top: 22px;
+        left: 6%;
+        right: 6%;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(247,234,215,0.9), rgba(255,255,255,0.35), rgba(247,234,215,0.9));
+        z-index: 1;
+      }
+
+      .photo-item {
+        position: relative;
+        width: calc(33.333% - 0.85rem);
+        max-width: 320px;
+        opacity: 0;
+        transition: transform 0.55s ease, opacity 0.55s ease;
+      }
+
+      .photo-item::before {
+        content: '';
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        height: 18px;
+        border-radius: 11px;
+        background: #f7e4d8;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+        z-index: 2;
+      }
+
+      .photo-item::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 22px;
+        background: #d8bfa3;
+        z-index: 2;
+      }
+
+      .photo-item.visible {
+        opacity: 1;
+      }
+
+      .photo-card {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 28px 70px rgba(0,0,0,0.28);
+        position: relative;
+        width: 100%;
+        background: rgba(18, 12, 28, 0.08);
+        border: 1px solid rgba(191,191,191,0.04);
+        transform-origin: center bottom;
+      }
+
+      .photo-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .date-tag {
+        padding: 0.95rem 0 0.45rem;
+        text-align: center;
+        color: rgba(245, 245, 245, 0.92);
+        font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .photo-item:hover {
+        transform: scale(1.04);
+        z-index: 30;
+      }
+
+      .music-box audio {
+        display: none;
+      }
+
+      @keyframes spinDisc {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes noteRise {
+        0% { opacity: 0; transform: translateY(0) scale(0.8); }
+        30% { opacity: 1; transform: translateY(-50px) scale(1); }
+        100% { opacity: 0; transform: translateY(-90px) scale(1.2); }
+      }
+
+      @keyframes backgroundSpin {
+        0% { transform: rotate(-10deg); }
+        100% { transform: rotate(350deg); }
+      }
+
+
+
+      .light-strings {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 120px;
+        transform: translateX(-50%);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .light-strings span {
+        position: absolute;
+        display: block;
+        width: 2px;
+        height: 100px;
+        background: rgba(255, 217, 101, 0.55);
+        border-radius: 2px;
+      }
+
+      .light-strings span::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #ffe16f;
+        box-shadow: 0 0 18px rgba(255, 225, 120, 0.9);
+      }
+
+      @keyframes dropIn {
+        0% { opacity: 0; transform: translateY(-50px) scale(0.92); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      .photo-item.visible {
+        animation: fallTogether 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      @keyframes fallTogether {
+        0% { opacity: 0; transform: translateY(-140px) rotate(-7deg); }
+        60% { opacity: 1; transform: translateY(18px) rotate(3deg); }
+        100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+      }
+
+      .title {
+        margin: 0.2rem 0 0.3rem;
+        text-align: center;
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        color: #ffdce8;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        text-align: center;
+        margin: 0 0 1.2rem;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .letter-wrap {
+        perspective: 1200px;
+      }
+
+      .envelope {
+        position: relative;
+        margin: 0 auto 1rem;
+        width: min(100%, 380px);
+        height: 128px;
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease;
+      }
+
+      .envelope.opened {
+        transform: rotateX(180deg);
+      }
+
+      .envelope .front, .envelope .back {
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #7d2b4d, #39111f);
+        box-shadow: inset 0 -14px 24px rgba(0,0,0,0.18);
+      }
+
+      .envelope .front {
+        clip-path: polygon(0 0, 100% 0, 100% 58%, 50% 100%, 0 58%);
+      }
+
+      .envelope .back {
+        transform: rotateX(180deg);
+        clip-path: polygon(0 35%, 100% 35%, 100% 100%, 0 100%);
+      }
+
+      .letter-card {
+        margin-top: -10px;
+        padding: 1.2rem;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.01);
+        border: 1px solid rgba(191,191,191,0.04);
+        backdrop-filter: blur(6px);
+        opacity: 0;
+        transform: translateY(35px) scale(0.95);
+        transition: all 0.8s ease;
+      }
+
+      .letter-card.revealed {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .message-box, .photo-box {
+        padding: 1rem;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.008);
+        border: 1px solid rgba(191,191,191,0.04);
+        backdrop-filter: blur(3px);
+      }
+
+      .message-box p {
+        line-height: 1.85;
+        font-size: 1rem;
+        margin: 0;
+        color: #fce8f0;
+      }
+
+      .message-box .highlight {
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #ff7aad;
+        margin-bottom: 0.7rem;
+      }
+
+      .photo-box {
+        text-align: center;
+      }
+
+      .photo-box img {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 22px;
+        border: 3px solid rgba(255, 77, 136, 0.35);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .photo-box:hover img {
+        transform: scale(1.03);
+        box-shadow: 0 16px 32px rgba(255, 77, 136, 0.28);
+      }
+
+      .photo-caption {
+        margin-top: 0.7rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .album-button-row {
+        display: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .album-button-row.visible {
+        display: flex;
+      }
+
+      .music-box {
+        margin-top: 0.9rem;
+        padding: 0.8rem;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .music-box audio {
+        width: 100%;
+      }
+
+      .music-label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #ffd9e7;
+        font-size: 0.95rem;
+      }
+
+      .heart-sign {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.06em;
+        color: #ffdce8;
+      }
+
+      .pulse-hearts {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 8px;
+        display: flex;
+        gap: 8px;
+        pointer-events: none;
+        z-index: 40;
+      }
+
+      .pulse-hearts .ph {
+        font-size: 1.6rem;
+        color: #ff6fa6;
+        opacity: 0;
+        transform: scale(0.6);
+        animation: heartPulse 1s ease-in-out infinite;
+      }
+
+      @keyframes heartPulse {
+        0% { opacity: 0; transform: scale(0.6); }
+        40% { opacity: 1; transform: scale(1.05); }
+        100% { opacity: 0; transform: scale(1.3); }
+      }
+
+      .timer {
+        text-align: center;
+        color: #ffdfe9;
+        font-weight: 600;
+        margin-top: 0.25rem;
+        font-size: 0.98rem;
+      }
+
+      @media (max-width: 850px) {
+        .content-grid { grid-template-columns: 1fr; }
+        .main-card { margin: 1rem; padding: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <video class="page-video" controls autoplay muted loop playsinline>
+      <source src="backround.mp4" type="video/mp4" />
+      <source src="backround,mp4" type="video/mp4" />
+    </video>
+    <div class="page-bg"></div>
+    <div class="background-disc">
+      <div class="background-grooves"></div>
+      <div class="music-notes">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♪</span>
+        <span>♫</span>
+      </div>
+      <div class="record-cover">
+        <img src="9385330-61.webp" alt="Poza disc" />
+      </div>
+    </div>
+    <div class="star-overlay"></div>
+
+    <main class="main-card">
+      <div class="topbar">
+        <button id="openBtn" class="open-btn">Apasa aici!</button>
+      </div>
+
+      <h1 class="title">La multi ani, iubitul meu.</h1>
+      <p class="subtitle">Pentru tine, cu inimioare, pupici și dragoste</p>
+      <div id="togetherTimer" class="timer">Împreună de: calculating…</div>
+
+      <div class="letter-wrap">
+        <div id="envelope" class="envelope">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+
+        <div id="letterCard" class="letter-card">
+          <div class="content-grid">
+            <section class="message-box">
+              <span class="highlight">La mulți ani, Seby!!</span>
+              <p>
+                Te iubesc mult, iubitul meu, și îți urez un la mulți ani plin de bucurie și fericire &lt;3
+                Faci 20 de ani, dar te voi vedea mereu ca pe un copil. Vei fi mereu în inima mea, la orice vârstă,
+                indiferent de riduri sau dureri de spate. Te iubesc. Te iubesc precum stelele iubesc cerul,
+                precum lebedele iubesc lacul, precum fulgerul iubește tunetul,
+                precum ploaia iubește pământul, precum pixul iubește foaia.
+                Te iubesc mai mult decât pe oricine, la bine și la rău &lt;3
+              </p>
+              <p>
+                Îți mulțumesc că ai vrut să treci prin toate fazele mele și că m-ai acceptat așa cum sunt. Ca să mă revanșez,
+                o să-ți ofer cea mai frumoasă experiență cu mine și, din puținul meu, o să-ți dau cel mai mult.
+                În plus, îți voi fi mereu aproape, indiferent cât de departe ești, iar atunci când ai probleme voi veni
+                cu suport și soluții. Pentru tine voi trece prin iad și înapoi numai ca să-ți văd zâmbetul pe față,
+                iar apoi voi trece și prin rai ca să-i avertizez că le-a scăpat un înger pe pământ.
+                Încă o dată, la mulți ani, și sper că vei avea o viață mai ușoară de acum încolo; să-ți îndeplinești visul
+                de a deveni milionar și să ai o familie frumoasă (cu mine). Te iubesc enorm și sper că nu vei uita asta niciodată &lt;3
+              </p>
+            </section>
+
+            <section class="photo-box">
+              <img src="photo.jpg" alt="Poza cu tine și cu seby" />
+              <div class="photo-caption">O amintire frumoasă pentru ziua ta specială.</div>
+              <div class="music-box">
+                <span class="music-label">Muzică de fundal: I Wouldn't Mind by He Is We</span>
+                <audio id="music" loop playsinline>
+                  <source src="music.mp3" type="audio/mpeg" />
+                  Browser-ul tău nu suportă audio.
+                </audio>
+              </div>
+            </section>
+          </div>
+          <div id="albumButtonRow" class="album-button-row">
+            <button id="albumBtn" class="open-btn secondary">apasa aici!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="album-wrap">
+        <div id="lightStrings" class="light-strings"></div>
+        <div id="photoAlbum" class="photo-album"></div>
+      </div>
+
+      <div class="heart-sign">Te iubesc</div>
+    </main>
+
+    <script>
+      // Ensure background video uses the correct file and attempt to play it.
+      (function(){
+        const v = document.querySelector('.page-video');
+        if (!v) return;
+        const trySrc = ['backround.mp4','backround.mp4','backround,mp4','background.mp4'];
+        for (const s of trySrc) {
+          try {
+            const url = s;
+            v.src = url;
+            v.load();
+            // try play; some browsers may block autoplay, but muted should allow it
+            v.play().catch(e=> console.log('video play failed', e && e.message));
+            break;
+          } catch(e) {
+            console.log('set src error', e && e.message);
+          }
+        }
+        v.addEventListener('error', (ev)=> console.log('video error', ev));
+        // show visible message if video cannot play
+        v.addEventListener('stalled', ()=> console.log('video stalled'));
+        setTimeout(()=>{
+          if (v.readyState === 0 || v.networkState === 3) {
+            const msg = document.createElement('div');
+            msg.style.position = 'fixed';
+            msg.style.left = '12px';
+            msg.style.bottom = '12px';
+            msg.style.zIndex = 99999;
+            msg.style.padding = '10px 14px';
+            msg.style.background = 'rgba(0,0,0,0.6)';
+            msg.style.color = '#ffdce8';
+            msg.style.borderRadius = '8px';
+            msg.textContent = 'Background video failed to load—try disabling Brave shields or open the video file directly to test.';
+            document.body.appendChild(msg);
+          }
+        }, 900);
+
+        // small badge showing whether GIF or video background loaded
+        setTimeout(()=>{
+          const badge = document.createElement('div');
+          badge.style.position = 'fixed';
+          badge.style.left = '12px';
+          badge.style.top = '12px';
+          badge.style.zIndex = 99999;
+          badge.style.padding = '6px 10px';
+          badge.style.background = 'rgba(0,0,0,0.6)';
+          badge.style.color = '#fff';
+          badge.style.borderRadius = '6px';
+          badge.style.fontSize = '12px';
+          let text = 'Background: ';
+          try {
+            const bg = document.querySelector('.page-bg');
+            const bgStyle = bg ? window.getComputedStyle(bg).backgroundImage : '';
+            if (v && v.currentSrc && v.networkState !== 3) text += 'video loaded';
+            else if (bgStyle && bgStyle.indexOf('backround.gif') !== -1) text += 'GIF loaded';
+            else text += 'none';
+          } catch(e) { text += 'error'; }
+          badge.textContent = text;
+          document.body.appendChild(badge);
+        }, 1400);
+      })();
+      const openBtn = document.getElementById('openBtn');
+      const albumBtn = document.getElementById('albumBtn');
+      const albumButtonRow = document.getElementById('albumButtonRow');
+      const envelope = document.getElementById('envelope');
+      const letterCard = document.getElementById('letterCard');
+      const photoAlbum = document.getElementById('photoAlbum');
+      const lightStrings = document.getElementById('lightStrings');
+      const music = document.getElementById('music');
+
+      const albumPhotos = [
+        { src: 'photo1.jpeg', date: '21 martie' },
+        { src: 'photo2.jpeg', date: '8 aprilie' },
+        { src: 'photo3.jpeg', date: '8 aprilie' },
+        { src: 'photo4.jpeg', date: '1 mai' },
+        { src: 'photo5_lift.jpeg', date: '1 mai' },
+        { src: 'photo6.jpeg', date: '16 iunie' },
+        { src: 'photo7.jpeg', date: '16 iunie' },
+        { src: 'photo8.jpeg', date: '11 iulie' },
+        { src: 'photo9.jpeg', date: '11 iulie' }
+      ];
+
+
+      // Create pulsing hearts overlay when album opens
+      function createPulseHearts() {
+        const container = document.createElement('div');
+        container.className = 'pulse-hearts';
+        for (let i = 0; i < 5; i++) {
+          const h = document.createElement('div');
+          h.className = 'ph';
+          h.textContent = '💗';
+          h.style.animationDelay = `${i * 0.12}s`;
+          container.appendChild(h);
+        }
+        document.body.appendChild(container);
+        setTimeout(() => container.remove(), 4200);
+      }
+
+      function launchClickBurst(event) {
+        const burst = document.createElement('span');
+        burst.className = 'click-burst';
+        burst.textContent = 'te iubesc!';
+        burst.style.left = `${event.clientX}px`;
+        burst.style.top = `${event.clientY}px`;
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 950);
+      }
+
+      function createStarField() {
+        const overlay = document.querySelector('.star-overlay');
+        if (!overlay) return;
+        const count = 80;
+        for (let i = 0; i < count; i += 1) {
+          const star = document.createElement('span');
+          star.className = 'star';
+          const size = Math.random() * 3 + 1; // 1-4px
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 65 + 5}%`;
+          star.style.animationDuration = `${1.6 + Math.random() * 3.4}s`;
+          star.style.animationDelay = `${Math.random() * 2.5}s`;
+          star.style.opacity = `${0.25 + Math.random() * 0.75}`;
+          overlay.appendChild(star);
+        }
+      }
+
+      document.addEventListener('click', launchClickBurst);
+
+      // Countdown since 8 April 2026 (adjust year if needed)
+      function startTogetherTimer() {
+        const start = new Date('2026-04-08T00:00:00');
+        const el = document.getElementById('togetherTimer');
+        function update() {
+          const now = new Date();
+          if (now < start) {
+            el.textContent = 'Împreună de: 0 luni 0 zile 0:00:00';
+            return;
+          }
+          // calculate whole months
+          let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+          const monthAnchor = new Date(start.getTime());
+          monthAnchor.setMonth(start.getMonth() + months);
+          if (monthAnchor > now) {
+            months -= 1;
+            monthAnchor.setMonth(start.getMonth() + months);
+          }
+          const diffMs = now - monthAnchor;
+          const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+          const hrs = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+          const mins = Math.floor((diffMs / (1000 * 60)) % 60);
+          const secs = Math.floor((diffMs / 1000) % 60);
+          const pad = (n) => String(n).padStart(2, '0');
+          el.textContent = `Împreună de: ${months} luni ${days} zile ${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
+        }
+        update();
+        setInterval(update, 1000);
+      }
+
+      async function openLetter() {
+        envelope.classList.add('opened');
+        letterCard.classList.add('revealed');
+        albumButtonRow.classList.add('visible');
+        openBtn.textContent = 'ai apasat lol :p';
+        openBtn.disabled = true;
+        music.volume = 0.18;
+        try {
+          await music.play();
+          music.muted = false;
+        } catch (error) {
+          console.log('Audio start was blocked until user interaction.');
+        }
+      }
+
+      openBtn.addEventListener('click', openLetter);
+
+      function createLightStrings() {
+        const positions = [12, 30, 48, 66, 84];
+        positions.forEach((left, index) => {
+          const string = document.createElement('span');
+          string.style.left = `${left}%`;
+          string.style.height = `${90 + index * 6}px`;
+          lightStrings.appendChild(string);
+        });
+      }
+
+      function showAlbum() {
+        albumBtn.disabled = true;
+        albumBtn.textContent = 'ai apasat omg';
+        photoAlbum.classList.add('visible');
+
+        if (!photoAlbum.hasChildNodes()) {
+          const rows = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8]
+          ];
+
+          const rotations = [
+            [-7, 5, -3],
+            [6, -8, 7],
+            [-4, 8, -6]
+          ];
+
+          rows.forEach((rowIndexes, rowIndex) => {
+            const row = document.createElement('div');
+            row.className = 'photo-row';
+            photoAlbum.appendChild(row);
+
+            rowIndexes.forEach((photoIndex, columnIndex) => {
+              const photo = albumPhotos[photoIndex];
+              const item = document.createElement('div');
+              item.className = 'photo-item';
+              const rot = rotations[rowIndex][columnIndex];
+              item.style.transform = `translateY(18px) rotate(${rot}deg)`;
+              item.style.zIndex = `${100 - photoIndex}`;
+
+              const card = document.createElement('div');
+              card.className = 'photo-card';
+
+              const img = document.createElement('img');
+              img.src = photo.src;
+              img.alt = `Album foto ${photo.date}`;
+              card.appendChild(img);
+
+              const dateTag = document.createElement('div');
+              dateTag.className = 'date-tag';
+              dateTag.textContent = photo.date;
+              card.appendChild(dateTag);
+
+              item.appendChild(card);
+              row.appendChild(item);
+
+              setTimeout(() => {
+                item.classList.add('visible');
+                item.style.transform = `translateY(0) rotate(${rot}deg)`;
+              }, 120 + photoIndex * 100);
+            });
+          });
+          // play pulse hearts animation when album opens
+          createPulseHearts();
+          // start the together timer (if not already)
+          if (!window._togetherTimerStarted) {
+            startTogetherTimer();
+            window._togetherTimerStarted = true;
+          }
+        }
+      }
+
+      albumBtn.addEventListener('click', showAlbum);
+      createLightStrings();
+      createStarField();
+    </script>
+  </body>
+</html>
+
+c:\Users\bedb1\Downloads\giphy_gif (500×276).gif
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#210812"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#9a3d71"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 9</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">11 iulie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#250b14"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#8d3d6b"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 8</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">11 iulie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#1f0810"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#7d2958"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 7</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">16 iunie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#170812"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#6f2454"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 6</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">16 iunie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#280716"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#7c2e54"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 5</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">1 mai</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#1f0812"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#70244a"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 4</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">1 mai</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#240b17"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#511a44"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 3</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">8 aprilie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#1f0914"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#4b173d"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 2</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">8 aprilie</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#2a0f1d"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#3f1635"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 1</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">21 martie</text>
+</svg>
