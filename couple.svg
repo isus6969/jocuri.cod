@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900">
+  <rect width="800" height="900" rx="40" fill="#1c0713"/>
+  <rect x="40" y="40" width="720" height="820" rx="30" fill="#2b0f1d" stroke="#ff4d88" stroke-width="4"/>
+  <circle cx="400" cy="320" r="180" fill="#ffdbeb" opacity="0.16"/>
+  <path d="M305 360c0-80 55-125 95-125s95 45 95 125v120H305z" fill="#7a3bff"/>
+  <circle cx="290" cy="305" r="70" fill="#f6b9cf"/>
+  <circle cx="510" cy="305" r="70" fill="#f6b9cf"/>
+  <circle cx="280" cy="290" r="12" fill="#1f1221"/>
+  <circle cx="500" cy="290" r="12" fill="#1f1221"/>
+  <path d="M270 390c35 40 80 60 130 60s95-20 130-60" stroke="#ff4d88" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M350 490c0 60 30 95 50 95s50-35 50-95" fill="#ff4d88"/>
+  <path d="M245 545c35-40 70-60 110-60 40 0 75 20 110 60" stroke="#ff7aad" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M310 610c45 60 135 60 180 0" stroke="#ff7aad" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M250 200c30-95 220-110 300 0" stroke="#ff4d88" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M330 180c0-35 25-60 60-60 35 0 60 25 60 60" fill="#ff4d88"/>
+  <path d="M560 690c-35 80-120 120-160 120s-125-40-160-120" fill="#ff4d88" opacity="0.25"/>
+  <text x="400" y="790" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#ffdce9">Tine de tine și de el</text>
+</svg>
