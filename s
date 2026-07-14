@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#170812"/>
+  <rect x="30" y="30" width="580" height="360" rx="22" fill="#6f2454"/>
+  <text x="320" y="230" text-anchor="middle" fill="#ffd8e8" font-family="Georgia, serif" font-size="34">Foto 6</text>
+  <text x="320" y="280" text-anchor="middle" fill="#d3a4c4" font-family="Georgia, serif" font-size="20">16 iunie</text>
+</svg>
